@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<title> YCC: Contact us  </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<link rel="stylesheet" href="../CSS/style.css">
+<link rel="stylesheet" href="../CSS/footer.css">
+<link rel="stylesheet" href="../CSS/contacts.css">
+
+</head>
+<body>
+
+<div id="navbar">
+  <a href="#default" id="name">YCC Online Examination</a>
+  <img src="..\IMAGES/logo.png" alt="company logo" class="logo" width="5.5%"  height="5.5%"> 
+  <div id="navbar-right">
+    <a  href="#home">Home</a>
+    <a class="active" href="#contact">Contact</a>
+    <a href="#about">User Profile</a>
+    <a href="#about">About</a>
+    
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<header>CONTACT Us</header>
+
+ <div class="divstyle" > 
+<div class="row1">
+  <div class="column1">
+      <br><br><br>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7967989847107!2d79.97097871459279!3d6.914881795003639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae256db1043cc37%3A0x5f43c37d11c72aa!2sSLIIT%20Main%20Building%2C%20Malabe!5e0!3m2!1sen!2slk!4v1601706115933!5m2!1sen!2slk" width="500" height="260"></iframe>
+    
+    </div>
+  <div class="column1">
+      <form id="form" class="topBefore" action = ../PHP/post_comment.php method = "POST">
+		  <input id="name" type="text"  value = "name" placeholder="NAME">
+		  <textarea id="message" name = "comment" type="text" placeholder="MESSAGE"></textarea>
+          <input id="submit" type="submit" value="comment">
+          </form>  
+    
+    </div>
+   </div>
+  </div>
+    
+<div class="divstyle1" >
+    <h2>comments</h2>
+    
+</div>   
+
+<?php
+   mysql_connect("127.0.0.1 ","root@localhos","");
+   mysql_select_db("iwt");
+   $find_comments = mysql_query("SELECT*FROM comments");
+   while ($row = mysql_fetch_assoc($find_comments))
+   {
+	   $comment_name = $row['name'];
+	   $comment= $row['comment'];
+	   echo '$comment_name - $comment';
+   }
+
+   
+   
+ <br><br><br><br><br><br><br><br><br><br><br><br>   
+    </body>
+    <footer>
+    
+<div class="footer">
+  <div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>Our Service</h2>
+    <br>
+    <p>We understand every organization is different. That's why we've created affordable Online Testing Plans to suit our employees needs. From occasional usage to Enterprise Online exam  platform requirements, YCC Online Examination system is  Secure & reliable exam maker & online testing solution.</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>Exam Policy</h2>
+    <br>
+    <p>Breaks are not allowed during the exam for any reason. You understand and agree that, if you take a break, your exam score will be invalidated, and you will not be allowed to resume the exam later.
+        Eating, drinking, smoking, and chewing gum are prohibited during the exam.</p>
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <h2>Important Information</h2>
+    <br>
+    <p>Our web - based examination system allows to you to easily create and smoothly do online exam with advance multiple-choice questions prior to the upgrading or promoting your designation. Instead of that we  provide platform to send feedbacks through this Y.C.C examination system .</p>
+  </div>
+  <div class="column" style="background-color:#ddd;">
+    <h2>Contact for Exam Issues</h2>
+    <br>
+    <br>
+    <br>
+    <p>Jane : +940112211111
+      <br>
+       Kane : +940112211111
+       <br>
+        Mike : +940112222222
+       <br>
+       YCC : ycc@gmail.com
+    </p>
+    <p>
+  </div>
+</div>
+<p>Y.C.C (pvt) Ltd © 2020</p>
+</div>
+
+
+
+
+    </footer>
+</html>
